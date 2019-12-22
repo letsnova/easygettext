@@ -293,7 +293,12 @@ exports.Extractor = class Extractor {
 
   getAttrsAndDatas(node) {
     if (node[0].type === 'text' || node[0].type === 'comment') {
-      return [{text: node[0].data.trim(), type: 'text'}];
+      let text = node[0].data.trim();
+      const match = /^:[\w\-]+=["'](.*)["']$/.exec(text);
+      if (match !== null) {
+        text = match[1];
+      }
+      return [{text, type: 'text'}];
     }
 
     const data = node.data();
