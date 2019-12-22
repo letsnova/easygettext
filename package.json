@@ -1,6 +1,6 @@
 {
   "name": "@letsnova/easygettext",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "Simple tools to extract gettext strings",
   "main": "src/extract-cli.js",
   "repository": {
